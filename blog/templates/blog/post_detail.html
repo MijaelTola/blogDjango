@@ -1,5 +1,4 @@
 {% extends 'blog/base.html' %}
-
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -10,13 +9,14 @@
         <div class="post">
             {% if posts.published_date %}
             <div class="date">
-                {{posts.published_date}}
+                {{ posts.published_date }}
             </div>
             {% endif %}
-            <h1> {{posts.title}} </h1>
-            <p> {{ posts.text|linebreaksbr}}</p>
+            <a class="btn btn-default" href="{% url 'post_edit' pk=posts.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <h1>{{ posts.title }}</h1>
+            <p>{{ posts.text|linebreaksbr }}</p>
         </div>
-        {% endblock%}
+        {% endblock %}
     </body>
 </html>
 
